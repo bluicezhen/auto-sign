@@ -51,3 +51,8 @@ if (getItem("已签到", "android.widget.TextView") === null) {
     console.log('已领取')
 }
 clickText("全部领取", "android.widget.TextView", true)
+// 京东 一键价保
+back()
+clickText("客户服务", "android.widget.TextView", true)
+clickText("价格保护", "android.widget.TextView", true)
+clickText("一键价保", "android.widget.TextView", true)
