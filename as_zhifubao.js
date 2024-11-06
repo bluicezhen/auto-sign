@@ -25,7 +25,7 @@ function clickText(text, cn, isSimClick) {
 
     if (item === null) {
         console.error('Can not found item', cn, text)
-        exit()
+        return
     }
 
     if (isSimClick) {
@@ -37,27 +37,5 @@ function clickText(text, cn, isSimClick) {
     item.click()
 }
 
-// 京东 领京豆
-launch("com.jingdong.app.mall");
-clickText("我的", "android.view.View", false)
-sleep(1000)
-clickText("京豆", "android.widget.TextView", true)
-if (getItem("已签到", "android.widget.TextView") === null) {
-    clickText("去签到领京豆", "android.widget.TextView", true)
-    sleep(10000)
-    clickText("签到领豆", "android.widget.TextView", true)
-    sleep(10000)
-    back()
-} else {
-    console.log('已签到')
-}
-if (getItem("全部领取", "android.widget.TextView") !== null) {
-    clickText("全部领取", "android.widget.TextView", true)
-}
+launch("com.eg.android.AlipayGphone");
 
-// 京东 一键价保
-sleep(10000)
-back()
-clickText("客户服务", "android.widget.TextView", true)
-clickText("价格保护", "android.widget.TextView", true)
-clickText("一键价保", "android.widget.TextView", true)

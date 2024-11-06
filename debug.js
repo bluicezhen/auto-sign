@@ -8,7 +8,7 @@
 // android.widget.RelativeLayout 相对布局
 // android.widget.RelativeLayout 相对布局
 // android.support.v7.widget.RecyclerView 通常也是列表控件
-var textViews = className("android.widget.TextView").find()
+var textViews = className("android.widget.Button").find()
 for (var i = 0; i < textViews.length; i++) {
     console.log(textViews[i].toString())
 }
