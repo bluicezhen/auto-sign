@@ -1,5 +1,3 @@
-launchApp("京东");
-
 let item = null
 
 const clickDesc = function (s) {
@@ -9,14 +7,17 @@ const clickDesc = function (s) {
     }
 }
 
-const clickText = function () {
+const clickText = function (s) {
     sleep(random(3000, 5000))
-    item = text('客户服务').findOne()
+    item = text(s).findOne()
     if (item !== null) {
         click(item.bounds().centerX(), item.bounds().centerY())
+    } else {
+        console.log('Can not find text item', s)
     }
 }
 
+launchApp("京东")
 clickDesc('我的')
 clickText('客户服务')
 clickText('价格保护')
